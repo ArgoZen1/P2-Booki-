@@ -1,0 +1,664 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap"); /** **/
+ul {
+    list-style-type: none; /** **/
+    padding-left: 0;
+}
+a {
+    text-decoration: none; /** **/
+    color: black;
+}
+body {
+    font-family: "Raleway", sans-serif; /** **/
+}
+header,
+.recherche,
+main {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+/**************************** HEADER *************************** */
+.bookiImg {
+    width: 150px;
+    float: left;
+    padding: 18px 16px;
+}
+nav {
+    overflow: hidden;
+}
+header li {
+    float: right;
+    margin-top: 20px;
+}
+header li a {
+    padding: 33px;
+}
+header li a:hover {
+    border-top: solid 2px #5b94f0; /** **/
+    color: #5b94f0;
+}
+.hebergements a {
+    border-top: solid 2px #5b94f0;
+    color: #5b94f0;
+}
+/**************************** HEADER *************************** */
+
+/**************************** RECHERCHE *************************** */
+.recherche h4 {
+    font-weight: normal;
+}
+form {
+    display: flex; /** **/
+    margin-bottom: 20px;
+}
+.iconeForm {
+    /** Icone du formulaire rechercher **/
+    background-color: #f2f2f2;
+    padding: 15px 15px;
+    border-radius: 15px 0px 0px 15px;
+}
+input,
+button {
+    /** pour mettre une hauteur à l'input et enlever les bordures **/
+    height: 50px;
+    border: none;
+}
+button {
+    background-color: #0065fc;
+    color: white;
+    border-radius: 0px 15px 15px 0px;
+    width: 150px;
+    height: 52px;
+}
+input {
+    font-weight: bold; /** pour mettre le texte en gras dans l'input **/
+    width: 250px; /** pour mettre une largeur à l'input **/
+}
+::placeholder {
+    color: black; /** pour mettre le texte en noir de l'input **/
+    padding-left: 15px;
+}
+.placeholderForm {
+    /** pour mettre une bordure autour de l'input **/
+    border: solid 1px #f2f2f2;
+}
+button {
+    cursor: pointer; /** **/
+    font-weight: bold;
+}
+.rechercheFiltre {
+    /** les filtres en dessous du bouton rechercher **/
+    display: flex; /** **/
+    align-items: center;
+    margin-bottom: 20px;
+}
+.rechercheFiltre span {
+    /** le texte des filtres **/
+    margin-left: 10px;
+    padding-left: 10px;
+    font-weight: bold;
+}
+.icon:hover {
+    background-color: #d9d9d9; /** pour changer le style des filtres au survol de la souris **/
+    transition: 0.5s;
+    color: #0065fc;
+}
+.rechercheFiltre span:hover,
+i:hover {
+    cursor: pointer;
+}
+.rechercheFiltre i {
+    /** les icones des filtres **/
+    background-color: #deebff;
+    padding: 14.5px 14.5px;
+    border-radius: 100%;
+    color: #0065fc;
+    font-size: 20px;
+}
+.icon {
+    /** encore les filtres **/
+    display: flex;
+    align-items: center;
+    border: solid 2px #d9d9d9; /** pour aligner le texte des filtres avec les icones **/
+    padding-right: 20px;
+    height: 45px;
+    margin-left: 20px;
+    border-left: none;
+    border-radius: 30px;
+}
+.rechercheFiltre h5 {
+    /** c'est le titre Filtres **/
+    font-weight: bold;
+    font-size: 20px;
+}
+.exclamation i {
+    /** point d'exclamation en dessous des filtres **/
+    color: #0065fc;
+    border: solid 1.2px #f2f2f2;
+    border-radius: 100%;
+    bottom: 2px;
+}
+/**************************** RECHERCHE *************************** */
+/**************************** SECTION HEBERGEMENTS *************************** */
+
+.card {
+    min-width: 100%;
+    margin: 0px auto; /** on centre avec margin 0px auto **/
+    background-color: white; /** on met une couleur differente du fond pour faire ressortir les cartes **/
+    box-shadow: 0px 5px 20px #999; /** on met ombres pour faire ressortir les cartes **/
+    padding: 5px;
+    border-radius: 15px;
+}
+#hebergementsSection {
+    /** **/
+    width: 68%; /** on fixe une taille à la section hebergement **/
+    background-color: #f2f2f2;
+    padding: 1rem;
+    border-radius: 20px;
+}
+.container-hebergement {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+    grid-auto-rows: minmax(100px, auto);
+    padding: 1.5rem;
+    padding-left: 1rem;
+    
+}
+main article:hover {
+    /** pour avoir un effet de zoom au survol **/
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+.afficherPlus {
+    width: 100%;
+    margin: 20px 0px auto 30px; /** pour que ce soit plus centrer par rapport aux cartes **/
+    font-weight: bold;
+    font-size: 20px;
+}
+#hebergementsSection .card-img {
+    /** on fixe une hauteur aux conteneurs des images **/
+    height: 140px;
+    position: relative; /** on le met en position relative pour metre les images en position absolute **/
+    overflow: hidden;
+    border-radius: 15px 15px 0px 0px;
+}
+#hebergementsSection img {
+    width: 100%;
+    position: absolute; /** avec le conteneur d'images en position relative, les images se positionneront en haut à gauche de celui-ci **/
+    top: 40%; /** ici on va situer grace à ça ou va se trouver l'image afin de la centrer **/
+    left: 50%;
+    transform: translate(
+        -50%,
+        -50%
+    ); /** avec ça on va agrandir l'image pour qu'elle soit réparti proportionellement à son conteneur **/
+}
+.card-body {
+    /** ici nous avons le conteneur du texte **/
+    margin: 0px 8px;
+    margin-top: -8px;
+    box-sizing: border-box; /** definit la façon dont la hauteur et la largeur totale d'un élément est calculée **/
+}
+#hebergementsSection h2 {
+    width: 100%; /** on met une largeur de 100% pour que le titre passe au dessus des elements **/
+    margin: auto;
+    margin-left: 30px;
+    font-size: 30px;
+}
+#hebergementsSection i {
+    color: #0065fc; /** on met la couleur aux étoiles **/
+}
+main {
+    margin-top: 40px;
+}
+/**************************** SECTION HEBERGEMENTS *************************** */
+/**************************** SECTION LES PLUS POPULAIRES *************************** */
+aside {
+    background-color: #f2f2f2;
+    border-radius: 15px;
+    margin-left: 1.2rem;
+}
+@media screen and (min-width: 1591px) {
+    /** ici on met l'aside en colonne avec une largeuur de 30%  **/
+    aside {
+        /** 1591px parce que j'ai fait en fonction de l'adaptation à l'écran **/
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+    }
+}
+.card1 {
+    margin-left: 10px;
+    margin-right: 15px;
+    background-color: white;
+    box-shadow: 0px 5px 20px #999;
+    border-radius: 15px;
+    box-sizing: border-box; /** definit la façon dont la hauteur et la largeur totale d'un élément est calculée **/
+    height: 200px;
+    padding: 5px;
+    position: relative; /** on met  le carte en position relative afin de pouvoir positionner les étoiles **/
+    margin-bottom: 25px;
+}
+.card-img1 {
+    height: 190px; /** on fixe une hauteur au conteneur de l'image **/
+    float: left; /** avec la largeur de l'image + float left ça permet de positionner le texte correctement  **/
+    position: relative; /** on le met en position relative pour metre les images en position absolute **/
+    overflow: hidden;
+    width: 35%; /** on fixe une largeur au conteneur de l'image **/
+    border-radius: 15px 0px 0px 15px;
+}
+.card1 img {
+    min-width: 300px; /** je fixe une taille à l'image pour qu'elle se centre dans son conteneur **/
+    position: absolute; /** avec le conteneur d'images en position relative, les images se positionneront en haut à gauche de celui-ci **/
+    top: 50%; /** ici on va situer grace à ça ou va se trouver l'image afin de la centrer **/
+    left: 50%;
+    transform: translate(
+        -50%,
+        -50%
+    ); 
+    object-fit: cover;
+}
+#hotelBleu img {
+    min-width: 200px; 
+}
+main {
+    display: flex; 
+    justify-content: space-between;
+}
+.card-body1 {
+    display: flex;
+    flex-direction: column; /** **/
+    padding-left: 15px;
+}
+.etoile {
+    color: #0065fc;
+    position: absolute; /**  **/
+    bottom: 10px;
+}
+aside p {
+    margin-top: 0; /** pour enlever la marge entre les lignes de texte **/
+}
+.asideIcon {
+    /**  pour positionner l'icone de l'aside en haut à droite aligné au titre **/
+    display: flex;
+    justify-content: space-between;
+    margin: 0 25px 0 25px;
+}
+.iconGraph {
+    /** c'est l'icone dans l'aside **/
+    font-size: 30px;
+    margin-top: 15px;
+}
+/**************************** SECTION LES PLUS POPULAIRES *************************** */
+/**************************** ACTIVITES A MARSEILLE *************************** */
+#container {
+    padding-left: 10px;
+    width: 98%;
+    margin-top: 4rem;
+}
+#container h2 {
+    margin-left: 20px;
+}
+.container-activity-flex {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+.objet0 {
+    background-color: #fff;
+    border-radius: 0.7rem;
+    box-shadow: 0rem 0rem 2rem 0.1rem #7f8c8d;
+    margin: 2rem 0rem 0.5rem 0.5rem;
+    transition: 0.4s;
+}
+.objet0:hover {
+    transform: scale(1.05);
+}
+.card-title0 {
+    padding: 2px;
+    margin-left: 7px;
+}
+.card-img0 {
+    width: 100%;
+    overflow: hidden;
+}
+.card-img0 img {
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    border-top-left-radius: 0.7rem;
+    border-top-right-radius: 0.7rem;
+}
+.card-img10 img {
+    height: 35rem;
+}
+.card-img15 img,
+.card-img14 img,
+.card-img12 img,
+.card-img11 img {
+    height: 14.5rem;
+}
+.card-img13 img {
+    height: 35rem;
+}
+@media screen and (max-width: 1590px) {
+    .container-activity-flex {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/**************************** ACTIVITES A MARSEILLE *************************** */
+/**************************** FOOTER *************************** */
+footer {
+    background-color: #f2f2f2;
+    width: 100%;
+}
+.blocFooter {
+    /**  **/
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin-left: 25px;
+    padding: 16px;
+}
+.blocFooter li {
+    line-height: 35px;
+}
+/**************************** FOOTER *************************** */
+/**************************** RESPONSIVE TELEPHONE HEADER *************************** */
+@media screen and (max-width: 768px) {
+    header nav {
+        /** Pour que la barre de navigation passe en dessous sur telephone **/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    header {
+        margin: 0;
+    }
+    .activites a {
+        margin: 0;
+        padding: 0;
+    }
+    .hebergements a {
+        border-top: none; /**  **/
+        color: #5b94f0;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    header ul {
+        display: flex;
+        flex-direction: row-reverse; /** **/
+        width: 100%;
+        margin: 0;
+    }
+    .activites {
+        width: 50%; /** on met une largeur de 50% pour le li activités **/
+        text-align: center;
+        border-bottom: solid 2px #f2f2f2;
+    }
+    .hebergements {
+        width: 50%; /** pareil pour herbergement **/
+        text-align: center;
+        border-bottom: solid 2px #5b94f0;
+        padding-bottom: 15px;
+    }
+    .bookiImg {
+        margin-left: 40px;
+    }
+    .hebergements:hover {
+        border-bottom: solid 2px #5b94f0;
+    }
+    .activites:hover {
+        border-bottom: solid 2px #5b94f0;
+    }
+    nav li a:hover {
+        border-top: none; /** **/
+    }
+}
+/**************************** RESPONSIVE TELEPHONE HEADER *************************** */
+/**************************** RESPONSIVE TELEPHONE RECHERCHE *************************** */
+@media screen and (max-width: 768px) {
+    h1,
+    .recherche h4 {
+        margin-left: 10px;
+    }
+    .boutonRecherche {
+        display: none; /** **/
+    }
+    .boutonIcon {
+        width: 50px;
+        border-radius: 15px;
+        margin-left: -10px;
+    }
+    .recherche form {
+        width: 100%;
+    }
+    .placeholderForm {
+        overflow: hidden; /** pour ne pas que l'icone loupe dépasse de la page **/
+        width: 100%; /** pour que le formulaire prenne tout la largeur de la page **/
+    }
+    input {
+        border-right: none;
+    }
+}
+@media screen and (min-width: 769px) {
+    .boutonIcon {
+        display: none; /** **/
+    }
+}
+@media screen and (max-width: 768px) {
+    .rechercheFiltre {
+        flex-wrap: wrap; /** pour que les filtres passent en dessous des autres **/
+    }
+    .icon {
+        margin-bottom: 12px; /** pour espacer les filtres entre eux quand ils se positionnent en colonne **/
+        margin-left: 0;
+    }
+    .recherche h5 {
+        width: 100%;
+        margin: 13px;
+    }
+}
+/**************************** RESPONSIVE TELEPHONE RECHERCHE *************************** */
+/**************************** RESPONSIVE TELEPHONE HEBERGEMENTS *************************** */
+@media screen and (max-width: 1110px) {
+    main {
+        display: flex;
+        flex-direction: column-reverse; /** pour positionner l'aside en haut de la section herbergement**/
+    }
+    #hebergementsSection h2 {
+        padding: 30px 0 30px 0;
+        font-size: 25px;
+        margin-left: 6%;
+    }
+    aside {
+        width: 100%;
+        margin: 0;
+        
+    }
+    .container-aside {
+        width: 96%;
+    }
+    .asideIcon {
+        padding: 18px 0 18px 0;
+        margin-right: 9%;
+    }
+    aside h2 {
+        margin-left: 5%;
+    }
+    .card1 {
+        width: 98%;
+    }
+    .card {
+        width: 85%;
+        margin-bottom: 20px;
+    }
+    #hotelBleu img {
+        width: 100%;
+        height: 100%;
+    }
+    #hebergementsSection {
+        width: 100%;
+        margin-top: 35px;
+        margin-right: 15px;
+        padding: 0;
+    }
+    .container-hebergement {
+        display: block;
+    }
+    .afficherPlus {
+        margin-bottom: 20px;
+    }
+}
+/**************************** RESPONSIVE TELEPHONE HEBERGEMENTS *************************** */
+/**************************** RESPONSIVE TELEPHONE ACTIVITES *************************** */
+@media screen and (max-width: 992px) {
+    .container-activity-flex {
+        grid-template-columns: repeat(1, 1fr);
+        padding-right: 1rem;
+    }
+    .card-img0 img {
+        height: 300px;
+    }
+    .objet2,
+    .objet5 {
+        margin-bottom: 4rem;
+    }
+}
+
+/**************************** RESPONSIVE TELEPHONE ACTIVITES *************************** */
+/**************************** RESPONSIVE TELEPHONE FOOTER *************************** */
+@media screen and (max-width: 768px) {
+    .blocFooter {
+        margin-top: 30px;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+}
+/**************************** RESPONSIVE TELEPHONE FOOTER *************************** */
+/**************************** RESPONSIVE TABLETTE *************************** */
+@media screen and (max-width: 992px) and (min-width: 768px) {
+    .rechercheFiltre {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+    #hebergementsSection {
+        width: 100%;
+        margin-top: 20px;
+    }
+    aside {
+        width: 100%;
+        margin-top: 65px;
+    }
+    aside img {
+        height: 100%;
+    }
+    .asideIcon {
+        padding: 20px 0 20px 0;
+    }
+    #hotelBleu img {
+        width: 100%;
+    }
+    .card-img1 img {
+        width: 100%;
+    }
+    .card {
+        margin-bottom: 20px;
+        margin-top: 15px;
+    }
+    #hebergementsSection h2 {
+        padding: 20px 0 20px 0;
+    }
+
+    #hotelBleu img {
+        object-fit: cover;
+    }
+    .blocFooter {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        margin-left: 25px;
+        padding: 16px;
+    }
+    .blocFooter li {
+        line-height: 35px;
+    }
+}
+/**************************** RESPONSIVE TABLETTE *************************** */
+@media screen and (max-width: 1590px) and (min-width: 1111px) {
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+    .afficherPlus {
+        margin-bottom: 15px;
+    }
+    aside {
+        width: 100%;
+        margin-top: 65px;
+        margin-bottom: 40px;
+        display: flex;
+        height: 360px;
+        position: relative;
+        align-items: center;
+        justify-content: space-around;
+        margin-left: 0;
+    }
+    .container-aside {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px;
+        padding: 2rem;
+
+        grid-auto-rows: minmax(100px, auto);
+    }
+    #hebergementsSection {
+        width: 100%;
+        margin-top: 20px;
+        padding: 0;
+    }
+    #hebergementsSection h2 {
+        padding: 30px 0 30px 0;
+    }
+    .card1 {
+        min-width: 100%;
+        margin-left: 0;
+    }
+    .asideIcon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    .iconGraph {
+        margin-right: 40px;
+    }
+    .card {
+        margin-bottom: 20px;
+    }
+    #container {
+        margin-top: 10px;
+        align-content: space-around;
+    }
+    #container h2 {
+        margin-top: -30px;
+        margin-left: 65px;
+    }
+    .objet0 {
+        margin-bottom: 15px;
+        margin-left: 10px;
+    }
+}
